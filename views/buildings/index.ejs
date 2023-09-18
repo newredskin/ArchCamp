@@ -25,7 +25,9 @@
       <div class="col-md-8">
         <div class="card-body">
           <h5 class="card-title"><%= building.name %></h5>
-          <p class="card-text"><%= building.description %></p>
+          <p class="card-text">
+            <%= building.description.substring(0, 150) %>...
+          </p>
           <p class="card-text">
             <small class="text-body-tertiary"><%= building.location %></small>
           </p>
