@@ -29,7 +29,7 @@ const reviewRoutes = require("./routes/reviews");
 const userRoutes = require("./routes/users");
 
 
-const dbUrl = "mongodb://localhost:27017/design-camp"; 
+const dbUrl = process.env.DB_URL;
 // "mongodb+srv://newredskin:3OuZ7JJmOFgkTFEc@atlascluster.krgsfef.mongodb.net/?retryWrites=true&w=majority" //Uncomment it when into production
 // "mongodb://localhost:27017/design-camp" // local MongoDB server
 
