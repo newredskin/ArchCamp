@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DESIGN CAMP</title>
+
+    <!-- Use Offline version! path issue is resolved!!!-->
+    <!-- Import Bootstrap. Note browser cannot read .scss file -> need convert it into .css by either vs extension or npm package -->
+    <!-- Code Below -->
+    <!-- /.../... => from project root directory AND order matters!!! -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/layouts/custom.css" />
+    <link rel="stylesheet" href="/stylesheets/app.css" />
+
+    <!-- Use CDN link -->
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    /> -->
+
+    <!-- Mapbox GL JS CDN LINK -->
+    <script
+      crossorigin="anonymous"
+      src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"
+    ></script>
+    <link
+      crossorigin="anonymous"
+      href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="d-flex flex-column vh-100">
+    <!-- Import partial components into boilerplate -->
+    <!-- NAVBAR -->
+    <%- include("../partials/navbar.ejs") %>
+
+    <!-- BODY -->
+    <main class="container mt-5">
+      <%- include("../partials/flash.ejs") %><%- body %>
+    </main>
+
+    <!-- FOOTER -->
+    <%- include("../partials/footer.ejs") %>
+    <!-- Bootstrap js & @proper -->
+    <!-- Use CDN link -->
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script> -->
+
+    <!-- Use offline version! path issue is resolved!!!-->
+    <!-- Codes Below -->
+    <script src="/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Form validation codes -->
+    <script src="/javascripts/validateForms.js"></script>
+  </body>
+</html>

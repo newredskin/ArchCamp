@@ -1,0 +1,49 @@
+<!-- Use ejs-mate func "layout" to import boilerplate into each page -->
+<% layout("layouts/boilerplate.ejs") %>
+
+<div id="cluster-map"></div>
+
+<div class="mx-auto text-center col-md-4">
+  <h1 class="mb-3 mt-5 offset-1">All Buildings</h1>
+</div>
+<ul class="ps-0">
+  <% for (let building of buildings) { %>
+  <div class="card mb-3">
+    <div class="row">
+      <div class="col-md-4">
+        <% if (building.images.length) { %>
+        <img
+          src="<%= building.images[0].url%>"
+          class="img-fluid"
+          alt=""
+          crossorigin="anonymous"
+        />
+        <% } else {%>
+        <img src="" alt="" class="img-fluid" crossorigin="anonymous" />
+        <% } %>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"><%= building.name %></h5>
+          <p class="card-text"><%= building.description %></p>
+          <p class="card-text">
+            <small class="text-body-tertiary"><%= building.location %></small>
+          </p>
+          <a
+            href="buildings/<%= building._id %>"
+            class="btn btn-primary text-white"
+            >View Detail</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <% } %>
+</ul>
+
+<script>
+  const mapToken = "<%-process.env.MAPBOX_TOKEN%>";
+  const buildings = {features: <%- JSON.stringify(buildings) %>}
+</script>
+
+<script src="/javascripts/clusterMap.js" crossorigin="anonymous"></script>

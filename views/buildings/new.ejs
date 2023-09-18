@@ -1,0 +1,83 @@
+<!-- Use ejs-mate func "layout" to import boilerplate into each page -->
+<% layout("layouts/boilerplate.ejs") %>
+<div class="row">
+  <h1 class="text-center mb-3">New Building</h1>
+  <div class="col-md-6 offset-md-3 mb-5">
+    <form
+      action="/buildings"
+      method="POST"
+      novalidate
+      class="validated-form"
+      enctype="multipart/form-data"
+    >
+      <div class="mb-3">
+        <label class="form-label" for="name">Building Name</label>
+        <input
+          class="form-control"
+          type="text"
+          id="name"
+          name="building[name]"
+          required
+        />
+        <div class="valid-feedback">Looks good</div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="location">Location</label>
+        <input
+          class="form-control"
+          type="text"
+          id="location"
+          name="building[location]"
+          required
+        />
+        <div class="valid-feedback">Looks good</div>
+      </div>
+      <div class="mb-3">
+        <!-- label for input-group should be outside the group and be linked to input element not the group -->
+        <label class="form-label" for="cost">Building Cost</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="cost-label">$</span>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="0"
+            aria-label="cost"
+            aria-describedby="cost-label"
+            name="building[cost]"
+            id="cost"
+            required
+          />
+          <!-- validate feedback should be in the input-group -->
+          <div class="valid-feedback">Looks good</div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="description">Description</label>
+        <textarea
+          name="building[description]"
+          id="description"
+          cols="20"
+          rows="10"
+          class="form-control"
+          required
+        ></textarea>
+        <div class="valid-feedback">Looks good</div>
+      </div>
+      <div class="mb-3">
+        <label for="image" class="form-label">Add Images</label>
+        <input
+          class="form-control"
+          type="file"
+          id="image"
+          name="image"
+          multiple
+        />
+        <div class="valid-feedback">Looks good</div>
+      </div>
+      <div class="mb-3">
+        <button class="btn btn-primary text-white">Add Building</button>
+      </div>
+    </form>
+    <a href="/buildings" class="mt-3">Back to All Buildings</a>
+  </div>
+</div>

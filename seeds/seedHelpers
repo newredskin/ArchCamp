@@ -1,0 +1,24 @@
+module.exports.descriptors = [
+    "Urban",
+    "Suburban",
+    "Rural",
+    "Lake",
+    "Ocean",
+    "Desert",
+    "Forest",
+    "Mountain",
+    "Bluff"
+]
+
+module.exports.places = [
+    "Apartment",
+    "House",
+    "High Rise",
+    "Museum",
+    "Commercial Building",
+    "Corporate Office",
+    "Healthcare Building",
+    "Education Building",
+    "Data Center",
+    "Athletics Center"
+]
