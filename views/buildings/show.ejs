@@ -50,7 +50,7 @@
         <li class="list-group-item fs-6">
           Submitted by <%= building.author.username %>
         </li>
-        <li class="list-group-item">Design Cost: $<%= building.cost %></li>
+        <li class="list-group-item">Built Year: <%= building.cost %></li>
       </ul>
       <% if (currentUser && building.author.equals(currentUser._id)) { %>
       <div class="card-body">

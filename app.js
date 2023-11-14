@@ -29,7 +29,7 @@ const reviewRoutes = require("./routes/reviews");
 const userRoutes = require("./routes/users");
 
 
-const dbUrl = process.env.DB_URL;
+const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/design-camp";
 // "mongodb+srv://newredskin:3OuZ7JJmOFgkTFEc@atlascluster.krgsfef.mongodb.net/?retryWrites=true&w=majority" //Uncomment it when into production
 // "mongodb://localhost:27017/design-camp" // local MongoDB server
 
@@ -204,5 +204,6 @@ app.use((err, req, res, next) => {
 
 
 // MONGODB LISTEN
-app.listen(3000, () => console.log("Serving on Port 3000..."))
+const port = process.env.PORT || 3000
+app.listen(port, () => console.log(`Serving on Port ${port}...`));
 
